@@ -1,0 +1,20 @@
+
+
+.submit{
+  background-color: black;
+  color: #fff;
+}
+.field{
+  border: solid  #13897D 1px;
+}
+input{
+  border-radius: 4px;
+  height: 45px;
+  padding: 5px;
+}
+.content{
+  width: 350px;
+}
+.link{
+  color: #13897D;
+}

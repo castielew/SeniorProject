@@ -15,7 +15,7 @@ function Notes() {
 
           <div className="col-lg-4 col-md-6 d-flex  justify-content-center">
               <img src={money} alt="" srcset="" />
-              <p className='mt-3'>Get help completing education</p>
+              <p className='mt-3' id='getClose'>Get help completing education</p>
           </div>
 
           <div className="col-lg-4 col-md-6  d-flex  justify-content-center">

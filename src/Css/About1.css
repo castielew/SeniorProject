@@ -1,0 +1,34 @@
+.about1{
+    background-color: #13897d4e;
+    height: 180px;
+    color: #141313;
+}
+.about1 p:first-child {
+font-size: large;
+font-weight: bold;
+}
+.about1 span{
+  color: #13897D;
+}
+.about1 button{
+    color: white;
+    background-color: #13897D;
+    border-radius: 15px ;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+
+}
+.about2 p:nth-child(2) {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+.about3{
+  background-color: #13897d4d;
+}
+.about3 h5{
+  color: #13897D;
+}
+

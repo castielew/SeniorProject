@@ -1,0 +1,43 @@
+.image-stack {
+  height: 260px;
+}
+
+.stacked-img {
+  position: absolute;
+  width: 200px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img1 {
+  top: 0;
+  left: 40px;
+  z-index: 1;
+}
+
+.img2 {
+  top: 80px;
+  left: 0;
+  z-index: 2;
+}
+
+.img3 {
+  top: 0;
+  right: 80px;
+  z-index: 1;
+}
+
+.img4 {
+  top: 60px;
+  right: 0;
+  z-index: 2;
+}
+
+.btn-teal {
+  background-color: #2a9d8f;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+}
+

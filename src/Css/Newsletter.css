@@ -1,0 +1,33 @@
+.Newsletter .container{
+    background-image: url('../images/newsbackdrop.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.Newsletter .container h3{
+    color:  #13897D;
+    padding-top: 40px;
+
+}
+
+.Newsletter .container p {
+    font-size: 17px;
+    opacity: 70%;
+    padding-top: 10px;
+}
+
+.Newsletter input{
+    border-radius: 10px;
+    border: none;
+}
+
+.Newsletter  p span{
+    color: #076565;
+}
+
+.submitButton{
+    color: #ffffff;
+    background-color: #076565;
+}

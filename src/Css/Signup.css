@@ -1,0 +1,30 @@
+
+  .submit{
+    background-color: black;
+    color: #fff;
+  }
+
+  .field{
+    border: solid  #13897D 1px;
+    height: 45px;
+  }
+  .field:focus{
+   border:solid #13897D 1px  ;
+   outline: none;
+  }
+
+  input{
+    border-radius: 4px;
+ 
+    padding: 5px;
+  }
+  .content2{   
+    width: 350px;
+  }
+  .link{
+    color: #13897D;
+  }
+  .notes{
+    background-color: #B7B7B7;
+    border-radius: 5px;
+  }

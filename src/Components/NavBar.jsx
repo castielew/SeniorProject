@@ -30,7 +30,7 @@ function NavBar() {
         <div className="pages d-flex mt-3">
           <ul className="d-flex nav-links align-items-center">
             <li><Link to="/" className="nav-item">Home</Link></li>
-            <li><Link className="nav-item">About</Link></li>
+            <li><Link to ="/about" className="nav-item">About</Link></li>
             <li><Link className="nav-item">Campaigns</Link></li>
             <li><Link className="nav-item">Blogs</Link></li>
             <li><Link className="nav-item">Funds</Link></li>
@@ -56,7 +56,7 @@ function NavBar() {
               <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#13897d"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg></a>
             </li>
             <li><Link to="/" className="nav-item">Home</Link></li>
-            <li><Link className="nav-item">About</Link></li>
+            <li><Link to ="/about" className="nav-item">About</Link></li>
             <li><Link className="nav-item">Campaigns</Link></li>
             <li><Link className="nav-item">Blogs</Link></li>
             <li><Link className="nav-item">Funds</Link></li>

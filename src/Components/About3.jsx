@@ -20,7 +20,7 @@ function About3() {
             </p>
           </div>
 
-          <div className="part1 col-lg-4 text-center ">
+          <div className="part1 col-lg-4 text-center">
             <img src={about3} alt="" srcset="" />
             <h5> Analytics And Feedback</h5>
             <p>

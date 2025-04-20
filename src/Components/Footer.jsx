@@ -29,7 +29,7 @@ function Footer() {
           <ul className="footer-links">
             <li id="Get_In">Get Involved</li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/about">About Sandini</Link></li>
+            <li><Link to="/about">About</Link></li>
             <li><Link to="/blogs">Blog+</Link></li>
             <li><Link to="/funds">Funds</Link></li>
             <li><Link to="/campaigns">Campaigns</Link></li>

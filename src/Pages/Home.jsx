@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 import Notes from '../Components/Notes';
 import Newsletter from '../Components/Newsletter';
 import Welcome from '../Components/Welcome';
+import Home1 from '../Components/Home1';
 function Home() {
     useEffect(()=>{
 document.body.style.backgroundColor=""
@@ -18,6 +19,7 @@ document.body.style.backgroundColor=""
 <NavBar></NavBar>
 <Welcome></Welcome>
 <Notes></Notes>
+<Home1></Home1>
 <Newsletter></Newsletter>
 <Footer></Footer>
 </div>

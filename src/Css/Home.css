@@ -1,3 +1,46 @@
-.Home1{
-    background-color: #36ad9132;
-}
+.home1-section {
+    background: rgba(54, 173, 146, 0.21);
+  }
+  
+  .subheading {
+    font-weight: 800;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.38);
+    margin-bottom: 0;
+  }
+  
+  .heading {
+    font-weight: 800;
+    font-size: 24px;
+    color: #333333;
+  }
+  
+  .icon-img {
+    width: 140px;
+    height: auto;
+  }
+  
+  .role-title {
+    font-weight: 800;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.38);
+    text-align: center;
+    max-width: 250px;
+  }
+  
+  .custom-btn {
+    background-color: #13897D;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 10px 20px;
+    margin-top: 12px;
+  }
+  

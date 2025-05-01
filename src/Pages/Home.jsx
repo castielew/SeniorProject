@@ -19,7 +19,7 @@ document.body.style.backgroundColor=""
 <NavBar></NavBar>
 <Welcome></Welcome>
 <Notes></Notes>
-{/* <Home1></Home1> */}
+<Home1></Home1>
 <Newsletter></Newsletter>
 <Footer></Footer>
 </div>

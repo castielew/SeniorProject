@@ -7,6 +7,7 @@ import Notes from '../Components/Notes';
 import Newsletter from '../Components/Newsletter';
 import Welcome from '../Components/Welcome';
 import Home1 from '../Components/Home1';
+import SeedFunds from '../Components/SeedFunds';
 function Home() {
     useEffect(()=>{
 document.body.style.backgroundColor=""
@@ -20,6 +21,7 @@ document.body.style.backgroundColor=""
 <Welcome></Welcome>
 <Notes></Notes>
 <Home1></Home1>
+<SeedFunds></SeedFunds>
 <Newsletter></Newsletter>
 <Footer></Footer>
 </div>

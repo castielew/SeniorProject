@@ -1,0 +1,126 @@
+/* Container and spacing */
+.home-campaigns-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Card image styling */
+.card-img-top-custom {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Card subtitles */
+.card-duration {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.card-details {
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+/* Funding row styling */
+.funding-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.funding-left {
+  font-weight: bold;
+  display: flex;
+  gap: 6px;
+}
+
+.funding-left .goal {
+  color: #6c757d;
+}
+
+.funding-right {
+  font-weight: bold;
+  color: #13897D;
+}
+
+/* Progress bar */
+.progress-custom {
+  height: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Footer buttons */
+.card-footer-buttons {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-footer-buttons span {
+  cursor: pointer;
+}
+
+.goal{
+  font-weight: 500 !important;
+  color: #5c5b5b7e !important;
+}
+
+.btn_color{
+  color: #13897d !important;
+  font-weight: bold !important;
+}
+
+.btn_color2{
+  background-color: #13897D !important;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.btn_color2:hover{
+  background-color: #0c5e55 !important;
+}
+
+.colorit1{
+  color: #333333 !important;
+}
+
+.colorit2{
+  font-weight: bold;
+  color: #ffffff8a !important;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.active{
+  background-color: #13897D !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #13897D !important;
+  box-shadow: 0 0 0 0.2rem rgba(19, 137, 125, 0.25) !important;
+}
+
+.progress-bar {
+  background-color: #13897D !important;
+}
+
+.card-footer-buttons .text-success {
+  color: #13897D !important;
+}

@@ -8,6 +8,7 @@ import Newsletter from '../Components/Newsletter';
 import Welcome from '../Components/Welcome';
 import Home1 from '../Components/Home1';
 import SeedFunds from '../Components/SeedFunds';
+import HomeCampaigns from '../Components/HomeCampaigns';
 function Home() {
     useEffect(()=>{
 document.body.style.backgroundColor=""
@@ -20,6 +21,7 @@ document.body.style.backgroundColor=""
 <NavBar></NavBar>
 <Welcome></Welcome>
 <Notes></Notes>
+<HomeCampaigns></HomeCampaigns>
 <Home1></Home1>
 <SeedFunds></SeedFunds>
 <Newsletter></Newsletter>

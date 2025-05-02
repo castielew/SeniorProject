@@ -5,6 +5,8 @@ import SignUp from "./Pages/SignUp";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Blogs from "./Pages/Blogs"
+import Campaigns from "./Pages/Campaigns"
+
 function App() {
   return (
     <Router>
@@ -14,6 +16,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/about" element={<About />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/campaigns" element={<Campaigns />} />
 
 
       </Routes>

@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Blogs from "./Pages/Blogs"
 import Campaigns from "./Pages/Campaigns"
+import CampaignDetails from "./Pages/CampaignDetails";
 
 function App() {
   return (
@@ -17,8 +18,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/campaigns" element={<Campaigns />} />
-
-
+        <Route path="/campaign/:id" element={<CampaignDetails/>} />
       </Routes>
     </Router>
   );

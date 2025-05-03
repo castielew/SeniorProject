@@ -124,3 +124,16 @@ textarea:focus {
 .card-footer-buttons .text-success {
   color: #13897D !important;
 }
+
+.ccc{
+  color: #13897D !important;
+}
+
+.size{
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+
+.mar{
+  margin-bottom: 20px !important;
+}

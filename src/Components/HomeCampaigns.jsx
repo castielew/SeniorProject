@@ -59,13 +59,11 @@ const HomeCampaigns = () => {
 
   return (
     <div className="container home-campaigns-container">
-      {/* Header */}
       <div className="mb-4">
-        <h6 className="text-muted colorit2">Students Campaigns</h6>
+        <h6 className="text-muted">Students Campaigns</h6>
         <h3 className="fw-bold colorit1">Meet the Students</h3>
       </div>
 
-      {/* Tabs */}
       <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap trysmth">
         <div className="btn-group">
           <button
@@ -87,12 +85,11 @@ const HomeCampaigns = () => {
             Recently Launched
           </button>
         </div>
-        <button className="btn btn text-success btn_color" onClick={() => navigate("/campaign")}>
+        <button className="btn btn text-success btn_color" onClick={() => navigate("/campaigns")}>
           All Campaigns
         </button>
       </div>
 
-      {/* Cards */}
       <div className="row g-4">
         {campaigns.map((c, index) => (
           <div key={index} className="col-12 col-sm-6 col-lg-3">
@@ -101,7 +98,8 @@ const HomeCampaigns = () => {
                 src={c.image}
                 alt={c.name}
                 className="card-img-top card-img-top-custom"
-                onClick={() => navigate("/campaign")}
+                onClick={() => navigate(`/campaign/${index + 1}`)}
+                style={{ cursor: "pointer" }}
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title mb-1">{c.name}</h5>
@@ -132,8 +130,14 @@ const HomeCampaigns = () => {
                 </div>
 
                 <div className="card-footer-buttons">
-                <span className="text-muted fw-bold">View</span>
-                <span className="text-success fw-bold">Donate</span>
+                  <span
+                    className="text-muted fw-bold"
+                    onClick={() => navigate(`/campaign/${index + 1}`)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    View
+                  </span>
+                  <span className="text-success fw-bold">Donate</span>
                 </div>
               </div>
             </div>

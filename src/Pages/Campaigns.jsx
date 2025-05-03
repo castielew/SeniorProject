@@ -1,24 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import "../Css/Home-Campaigns.css";
+
 const Campaigns = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   return (
     <>
       <NavBar />
 
-      {/* Hero Header */}
       <div className="py-5 text-center" style={{ backgroundColor: "#C7E5E0" }}>
         <h2 className="fw-bold">Meet the Students</h2>
         <p className="text-muted">Our hope for a better future</p>
       </div>
 
-      {/* Content Area */}
       <div className="container my-5">
         <div className="row">
-          {/* Sidebar Filters */}
           <div className="col-lg-3 mb-4">
             <h6 className="fw-bold mb-3">Filter Results</h6>
             {["Major", "Degree", "Birth Place", "Gender"].map((label, i) => (
@@ -32,9 +32,7 @@ const Campaigns = () => {
             <button className="btn btn-success w-100 fw-bold btn_color2">Search</button>
           </div>
 
-          {/* Campaigns and Search */}
           <div className="col-lg-9">
-            {/* Search and Sort */}
             <div className="d-flex justify-content-between align-items-center flex-wrap mb-4">
               <input
                 type="text"
@@ -52,7 +50,6 @@ const Campaigns = () => {
               </div>
             </div>
 
-            {/* Campaign Cards */}
             <div className="row g-4">
               {[...Array(6)].map((_, index) => (
                 <div key={index} className="col-sm-6 col-lg-4">
@@ -61,6 +58,8 @@ const Campaigns = () => {
                       src={`https://via.placeholder.com/400x400?text=Student+${index + 1}`}
                       alt="Campaign"
                       className="card-img-top card-img-top-custom"
+                      onClick={() => navigate(`/campaign/${index + 1}`)}
+                      style={{ cursor: "pointer" }}
                     />
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title mb-1">Student Name</h5>
@@ -87,7 +86,13 @@ const Campaigns = () => {
                       </div>
 
                       <div className="card-footer-buttons fw-bold">
-                        <span className="text-muted">View</span>
+                        <span
+                          className="text-muted"
+                          onClick={() => navigate(`/campaign/${index + 1}`)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          View
+                        </span>
                         <span className="text-success">Donate</span>
                       </div>
                     </div>
@@ -96,7 +101,6 @@ const Campaigns = () => {
               ))}
             </div>
 
-            {/* Load More Button */}
             <div className="text-center mt-5">
               <button className="btn btn-outline-secondary btn_color2">Load more</button>
             </div>

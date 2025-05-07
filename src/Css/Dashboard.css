@@ -1,0 +1,115 @@
+/* Layout */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .main-panel {
+    background-color: #ffffff;
+  }
+  
+  /* Sidebar */
+  .app-sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    box-shadow: 3px 9px 16.5px rgba(0, 0, 0, 0.25);
+    transition: width 0.3s ease;
+    position: relative;
+  }
+  .app-sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .sidebar-logo {
+    width: 115px;
+  }
+
+
+  .sidebar-toggle {
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    background-color: #13897D;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  
+  /* Hide labels when collapsed */
+  .app-sidebar.collapsed .sidebar-menu li {
+    justify-content: center;
+  }
+  
+  
+  .sidebar-menu li {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #1E1E1E;
+    cursor: pointer;
+  }
+  
+  .sidebar-menu li:hover {
+    color: #13897D;
+  }
+  
+  /* Top Navbar */
+  .top-navbar {
+    background-color: #13897D;
+    height: 60px;
+    color: #ffffff;
+  }
+  
+  .navbar-title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .navbar-user {
+    font-size: 16px;
+    font-weight: 800;
+  }
+  
+  .navbar-avatar {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+  }
+  
+  /* Dashboard Content */
+  .dashboard-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 1.5rem;
+  }
+  
+  .campaign-box {
+    width: 600px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7.6px rgba(0, 0, 0, 0.25);
+  }
+  
+  .about-box {
+    width: 300px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7.6px rgba(0, 0, 0, 0.25);
+  }
+  
+  .profile-image {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  

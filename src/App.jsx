@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Home from "./Pages/Home";
@@ -8,6 +10,7 @@ import Blogs from "./Pages/Blogs";
 import Campaigns from "./Pages/Campaigns";
 import CampaignDetails from "./Pages/CampaignDetails";
 import Funds from "./Pages/Funds";
+import MainLayout from "./Pages/MainLayout";
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
         <Route path="/campaigns" element={<Campaigns />} />
         <Route path="/campaign/:id" element={<CampaignDetails />} />
         <Route path="/funds" element={<Funds/>}/>
+        <Route path="/mainfunds" element={<MainLayout/>}/>
       </Routes>
     </Router>
   );

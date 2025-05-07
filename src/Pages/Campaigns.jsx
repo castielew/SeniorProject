@@ -18,7 +18,7 @@ const Campaigns = () => {
 
       <div className="py-5 text-center" style={{ backgroundColor: "#C7E5E0" }}>
         <h2 className="fw-bold">Meet the Students</h2>
-        <p className="text-muted">Our hope for a better future</p>
+        <p className="text-muted">Our hope for a better future1</p>
       </div>
 
       <div className="container my-5">

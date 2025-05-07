@@ -1,0 +1,12 @@
+.profile-page {
+    max-width: 1000px;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #13897D;
+  }
+  

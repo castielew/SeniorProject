@@ -1,13 +1,13 @@
 import React from 'react';
-// import '../Css/BlogSection.css';
-
-// Replace with actual image imports
 import blog1 from '../images/blog1.jpg';
 import blog2 from '../images/blog2.jpg';
 import blog3 from '../images/blog3.jpg';
 import blog4 from '../images/blog4.jpg';
 import blog5 from '../images/blog5.jpg';
 import blog6 from '../images/blog6.jpg';
+import Footer from './Footer';
+import NavBar from './NavBar';
+import '../Css/BlogSection.css'; // Link the CSS
 
 const blogs = [
   {
@@ -62,40 +62,52 @@ const blogs = [
 
 function BlogSection() {
   return (
-    <section className="blog-section py-5">
-      <div className="container">
-        {/* Search */}
-        <div className="d-flex justify-content-center mb-4">
+    <>
+      <NavBar />
+      <section className="blog-section">
+          <div className="py-5 text-center" style={{ backgroundColor: "#C7E5E0" }}>
+        <h2 className="fw-bold">Blogs</h2>
+        <p className="text-muted">Voices of our Students</p>
+      </div>
+
+          {/* Search */}
+
+
+        <div className="container">
+          
+ 
+          {/* Blog Grid */}
+          <div className="d-flex justify-content-center mb-4">
           <input
             type="text"
             className="form-control blog-search"
             placeholder="Search by Blog name"
           />
         </div>
-
-        {/* Blog Grid */}
-        <div className="row g-4">
-          {blogs.map((blog) => (
-            <div key={blog.id} className="col-md-4">
-              <div className="blog-card position-relative">
-                <img src={blog.image} alt={blog.title} className="img-fluid" />
-                <div className="overlay p-3 d-flex flex-column justify-content-end">
-                  <h5 className="text-white fw-bold blog-title">{blog.title}</h5>
-                  <p className="text-white blog-meta">
-                    by {blog.author} | {blog.date} | {blog.tags}
-                  </p>
+          <div className="row g-4">
+            {blogs.map((blog) => (
+              <div key={blog.id} className="col-md-4">
+                <div className="blog-card position-relative">
+                  <img src={blog.image} alt={blog.title} className="img-fluid" />
+                  <div className="overlay p-3 d-flex flex-column justify-content-end">
+                    <h5 className="text-white fw-bold blog-title">{blog.title}</h5>
+                    <p className="text-white blog-meta">
+                      by {blog.author} | {blog.date} | {blog.tags}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Load More Button */}
-        <div className="text-center mt-4">
-          <button className="btn btn-teal">Load more</button>
+          {/* Load More Button */}
+          <div className="text-center mt-4">
+            <button className="btn btn-teal">Load more</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </>
   );
 }
 

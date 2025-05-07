@@ -3,12 +3,15 @@ import campaign1 from "../images/Campaign1.jpg";
 import campaign2 from "../images/Campaign2.jpg";
 import campaign3 from "../images/Campaign3.jpg";
 import campaign4 from "../images/Campaign4.jpg";
+import DonationModal from "../Components/DonationModal";
 import { useNavigate } from "react-router-dom";
 import "../Css/Home-Campaigns.css";
 
 const HomeCampaigns = () => {
   const [activeTab, setActiveTab] = useState("featured");
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState({ name: '', image: '' });
 
   const campaigns = [
     {
@@ -137,13 +140,28 @@ const HomeCampaigns = () => {
                   >
                     View
                   </span>
-                  <span className="text-success fw-bold">Donate</span>
+                  <span
+                    className="text-success fw-bold"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      setSelectedStudent({ name: c.name, image: c.image });
+                      setShowModal(true);
+                    }}
+                  >
+                    Donate
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+      {showModal && (
+  <DonationModal
+    onClose={() => setShowModal(false)}
+    studentName={selectedStudent.name}
+    studentImage={selectedStudent.image}
+  />)}
     </div>
   );
 };

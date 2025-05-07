@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import SuggestedCampaigns from "../Components/SuggestedCampaigns";
+import DonationModal from "../Components/DonationModal";
 import raghad1 from "../images/raghad1.jpg";
 import raghad2 from "../images/raghad2.jpg";
 import raghad3 from "../images/raghad3.jpg";
@@ -19,6 +20,8 @@ const CampaignDetails = () => {
   const [activeTab, setActiveTab] = useState("story");
   const [showFullUpdate, setShowFullUpdate] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState({ type: "video", videoUrl: "https://www.youtube.com/embed/T5RabRjTrTQ" });
+  const [showModal, setShowModal] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState({ name: '', image: '' });
 
   const thumbnails = [
     { type: "video", thumbnail: "https://img.youtube.com/vi/T5RabRjTrTQ/0.jpg", videoUrl: "https://www.youtube.com/embed/T5RabRjTrTQ" },
@@ -150,9 +153,30 @@ const CampaignDetails = () => {
                 <div className="progress-bar" style={{ width: "100%" }}></div>
               </div>
               <div className="campaign-detail"><strong>Summer of 2024/2025</strong></div>
-              <div className="campaign-detail mb-3">Help Raghad out, <span className="donate-link">donate</span> now!</div>
+              <div className="campaign-detail mb-3">
+                Help Raghad out,{" "}
+                <span
+                  className="donate-link"
+                  style={{ cursor: "pointer", color: "#13897d", textDecoration: "underline" }}
+                  onClick={() => {
+                    setSelectedStudent({ name: "Raghad Zino", image: raghadImg });
+                    setShowModal(true);
+                  }}
+                >
+                  donate
+                </span>{" "}
+                now!
+              </div>
               <div className="campaign-actions d-flex gap-3 align-items-center">
-                <button className="btn btn-donate">Donate</button>
+                <button
+                  className="btn btn-donate"
+                  onClick={() => {
+                    setSelectedStudent({ name: 'Raghad Zino', image: raghadImg });
+                    setShowModal(true);
+                  }}
+                >
+                  Donate
+                </button>
               </div>
             </div>
 
@@ -179,29 +203,35 @@ const CampaignDetails = () => {
             </div>
 
             <div className="tuition-box border">
-  <div className="d-flex justify-content-between align-items-center tuition-header flex-wrap">
-    <div className="flex-grow-1">Prospective Degree</div>
-    <div className="d-flex align-items-center mt-2 mt-lg-0">
-      <div className="fw-bold me-2" style={{ fontSize: "20px" }}>$15,000</div>
-      <img src={uni} alt="tuition" width="24" height="24" />
-    </div>
-  </div>
-  <div className="tuition-content">
-    <div className="mb-1 tuition-subtitle">
-      Tuition: <span className="fw-semibold">Summer Semester</span>
-    </div>
-    <div className="tuition-description">
-      Student Tuition and Housing Deposit - Resident
-    </div>
-  </div>
-</div>
-
+              <div className="d-flex justify-content-between align-items-center tuition-header flex-wrap">
+                <div className="flex-grow-1">Prospective Degree</div>
+                <div className="d-flex align-items-center mt-2 mt-lg-0">
+                  <div className="fw-bold me-2" style={{ fontSize: "20px" }}>$15,000</div>
+                  <img src={uni} alt="tuition" width="24" height="24" />
+                </div>
+              </div>
+              <div className="tuition-content">
+                <div className="mb-1 tuition-subtitle">
+                  Tuition: <span className="fw-semibold">Summer Semester</span>
+                </div>
+                <div className="tuition-description">
+                  Student Tuition and Housing Deposit - Resident
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
       </div>
       <hr className="section-divider" />
-      <SuggestedCampaigns></SuggestedCampaigns>
+      <SuggestedCampaigns />
+      {showModal && (
+        <DonationModal
+          onClose={() => setShowModal(false)}
+          studentName={selectedStudent.name}
+          studentImage={selectedStudent.image}
+        />
+      )}
       <Footer />
     </div>
   );

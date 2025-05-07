@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Css/Home-Campaigns.css";
 import campaign1 from "../images/Campaign1.jpg";
 import campaign2 from "../images/Campaign2.jpg";
 import campaign3 from "../images/Campaign3.jpg";
 import campaign4 from "../images/Campaign4.jpg";
+import DonationModal from "../Components/DonationModal";
 
 const SuggestedCampaigns = () => {
   const campaigns = [
@@ -49,6 +50,9 @@ const SuggestedCampaigns = () => {
     },
   ];
 
+  const [showSuggestedModal, setShowSuggestedModal] = useState(false);
+  const [selectedSuggestedStudent, setSelectedSuggestedStudent] = useState({ name: "", image: "" });
+
   return (
     <div className="suggested-campaigns container mb-5">
       <h4 className="fw-bold mb-4 ccc">
@@ -59,7 +63,7 @@ const SuggestedCampaigns = () => {
           <div key={index} className="col-12 col-sm-6 col-lg-3">
             <div className="card h-100 shadow-sm">
               <img src={c.image} alt={c.name} className="card-img-top card-img-top-custom" />
-              <div className="card-body d-flex flex-column ">
+              <div className="card-body d-flex flex-column">
                 <h6 className="fw-bold mb-1 size">{c.name}</h6>
                 <div className="card-duration mb-1 mar">Raised so far in {c.duration}</div>
                 <div className="card-details">
@@ -85,13 +89,31 @@ const SuggestedCampaigns = () => {
                 </div>
                 <div className="card-footer-buttons">
                   <span className="text-muted fw-bold">View</span>
-                  <span className="text-success fw-bold">Donate</span>
+                  <span
+                    className="text-success fw-bold"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      setSelectedSuggestedStudent({ name: c.name, image: c.image });
+                      setShowSuggestedModal(true);
+                    }}
+                  >
+                    Donate
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Modal component */}
+      {showSuggestedModal && (
+        <DonationModal
+          onClose={() => setShowSuggestedModal(false)}
+          studentName={selectedSuggestedStudent.name}
+          studentImage={selectedSuggestedStudent.image}
+        />
+      )}
     </div>
   );
 };

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
+import DonationModal from "../Components/DonationModal"; // مكون المودال
 import "../Css/Home-Campaigns.css";
 
 const Campaigns = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState({ name: "", image: "" });
+
   const navigate = useNavigate();
 
   return (
@@ -51,54 +55,67 @@ const Campaigns = () => {
             </div>
 
             <div className="row g-4">
-              {[...Array(6)].map((_, index) => (
-                <div key={index} className="col-sm-6 col-lg-4">
-                  <div className="card h-100 shadow-sm">
-                    <img
-                      src={`https://via.placeholder.com/400x400?text=Student+${index + 1}`}
-                      alt="Campaign"
-                      className="card-img-top card-img-top-custom"
-                      onClick={() => navigate(`/campaign/${index + 1}`)}
-                      style={{ cursor: "pointer" }}
-                    />
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title mb-1">Student Name</h5>
-                      <p className="card-duration">Raised for 14 months</p>
-                      <p className="card-details">
-                        23 Years old, Syrian
-                        <br />
-                        Degree: Undergraduate
-                      </p>
+              {[...Array(6)].map((_, index) => {
+                const studentName = `Student ${index + 1}`;
+                const studentImage = `https://via.placeholder.com/400x400?text=Student+${index + 1}`;
+                return (
+                  <div key={index} className="col-sm-6 col-lg-4">
+                    <div className="card h-100 shadow-sm">
+                      <img
+                        src={studentImage}
+                        alt={studentName}
+                        className="card-img-top card-img-top-custom"
+                        onClick={() => navigate(`/campaign/${index + 1}`)}
+                        style={{ cursor: "pointer" }}
+                      />
+                      <div className="card-body d-flex flex-column">
+                        <h5 className="card-title mb-1">{studentName}</h5>
+                        <p className="card-duration">Raised for 14 months</p>
+                        <p className="card-details">
+                          23 Years old, Syrian
+                          <br />
+                          Degree: Undergraduate
+                        </p>
 
-                      <div className="funding-row">
-                        <div className="funding-left">
-                          <span>$3,752</span>
-                          <span className="goal">of $4,760 goal</span>
+                        <div className="funding-row">
+                          <div className="funding-left">
+                            <span>$3,752</span>
+                            <span className="goal">of $4,760 goal</span>
+                          </div>
+                          <span className="funding-right">78.8%</span>
                         </div>
-                        <span className="funding-right">78.8%</span>
-                      </div>
 
-                      <div className="progress progress-custom">
-                        <div
-                          className="progress-bar bg-success"
-                          style={{ width: "78.8%" }}
-                        ></div>
-                      </div>
+                        <div className="progress progress-custom">
+                          <div
+                            className="progress-bar bg-success"
+                            style={{ width: "78.8%" }}
+                          ></div>
+                        </div>
 
-                      <div className="card-footer-buttons fw-bold">
-                        <span
-                          className="text-muted"
-                          onClick={() => navigate(`/campaign/${index + 1}`)}
-                          style={{ cursor: "pointer" }}
-                        >
-                          View
-                        </span>
-                        <span className="text-success">Donate</span>
+                        <div className="card-footer-buttons fw-bold">
+                          <span
+                            className="text-muted"
+                            onClick={() => navigate(`/campaign/${index + 1}`)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            View
+                          </span>
+                          <span
+                            className="text-success"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => {
+                              setSelectedStudent({ name: studentName, image: studentImage });
+                              setShowModal(true);
+                            }}
+                          >
+                            Donate
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="text-center mt-5">
@@ -107,6 +124,14 @@ const Campaigns = () => {
           </div>
         </div>
       </div>
+
+      {showModal && (
+        <DonationModal
+          onClose={() => setShowModal(false)}
+          studentName={selectedStudent.name}
+          studentImage={selectedStudent.image}
+        />
+      )}
 
       <Footer />
     </>

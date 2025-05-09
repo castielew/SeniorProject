@@ -1,0 +1,21 @@
+.card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+  }  
+
+  .custom-table tbody tr {
+    height: 60px; /* increased row height */
+  }
+  
+  .custom-add-btn {
+    background-color: #13897d;
+    color: white;
+    border: none;
+  }
+  
+  .custom-add-btn:hover {
+    background-color: #0f736a; /* slight dark hover */
+    color: white;
+  }
+  

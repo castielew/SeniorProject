@@ -1,0 +1,20 @@
+.blog-add-btn {
+    background-color: #13897d;
+    color: white;
+    border: none;
+    font-weight: 500;
+  }
+  
+  .blog-add-btn:hover {
+    background-color: #0f736a;
+    color: white;
+  }
+  
+  .blog-table tbody tr {
+    height: 60px;
+  }
+  
+  .w-title {
+    width: 50%;
+  }
+  

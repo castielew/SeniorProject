@@ -1,0 +1,6 @@
+.app-sidebar {
+    width: 270px; /* or your intended width */
+    height: 100vh;
+    z-index: 1000;
+  }
+  

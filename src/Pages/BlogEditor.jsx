@@ -4,11 +4,8 @@ import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import '../Css/BlogEditor.css';
 
-const BlogEditor = () => {
+const BlogEditor = ({ onBack }) => {
   const [title, setTitle] = useState('');
-  const [summary, setSummary] = useState('');
-  const [keywords, setKeywords] = useState('');
-  const [hashtags, setHashtags] = useState('');
 
   const editor = useEditor({
     extensions: [
@@ -25,9 +22,6 @@ const BlogEditor = () => {
     const content = editor.getHTML();
     console.log({
       title,
-      summary,
-      keywords,
-      hashtags,
       content,
     });
     alert("Blog submitted! (check console)");
@@ -62,50 +56,20 @@ const BlogEditor = () => {
             </div>
           </div>
 
-          <div className="mb-3">
-            <label className="form-label">Blog Summary (max 160 characters)</label>
-            <input
-              type="text"
-              maxLength="160"
-              className="form-control"
-              required
-              value={summary}
-              onChange={(e) => setSummary(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Blog Keywords</label>
-            <input
-              type="text"
-              className="form-control"
-              required
-              value={keywords}
-              onChange={(e) => setKeywords(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Blog Hashtags</label>
-            <input
-              type="text"
-              className="form-control"
-              value={hashtags}
-              onChange={(e) => setHashtags(e.target.value)}
-            />
-          </div>
-
           <div className="d-flex gap-2 mt-4">
             <button type="submit" className="btn btn-primary">Submit</button>
             <button type="button" className="btn btn-secondary">Save as Draft</button>
-
           </div>
-          <a href="http://localhost:5174/mainfunds" className="btn btn-outline-secondary my-3 ">
-  ← Back to Main
-</a>
+
+          <button
+            type="button"
+            onClick={onBack}
+            className="btn btn-outline-secondary my-3"
+          >
+            ← Back to Blogs
+          </button>
         </form>
       </div>
-
     </div>
   );
 };
